@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from productSearch import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("polls/", include("polls.urls")),
+    path('', views.index),
 ]
+
+handler404 = 'productSearch.views.error_404_view'
