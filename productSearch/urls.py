@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("polls/", include("polls.urls")),
     path('', views.index),
+    path('products/<int:_id>', views.get_product, name="get_product"),
 ]
 
 handler404 = 'productSearch.views.error_404_view'
